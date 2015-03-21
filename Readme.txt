@@ -1,0 +1,1 @@
+This is a collection of projects from my BYU Computer Science classes
