@@ -1,0 +1,40 @@
+h1 {
+	font-weight: bold;
+	margin-top: 25px;
+}
+body{
+	/*background-image: url("http://icie.cs.byu.edu/images/background2.jpg");*/
+}
+* {
+	font-family: "Times New Roman";
+}
+.btn1 {
+	background-image: url("3btn.png");
+	width: 450px;
+	height: 225px;
+	border-style: solid;
+	border-color: black;
+	margin-top: 10px;
+    margin-left: 5px;
+    padding-top: 10px;
+    padding-right: 15px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    border-radius: 22px;
+    box-shadow: 5px 5px 5px #696969;
+    font-size: 1.5em;
+    text-align: center;
+    float: left;
+}
+.hover_btn{
+	box-shadow: 5px 5px 5px #505050;
+}
+.demo_div {
+	clear: both;
+	padding-top: 5px;
+	padding-left: 20px;
+}
+#text {
+	font-size: 1.5em;
+}
+

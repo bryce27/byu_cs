@@ -1,0 +1,65 @@
+<DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style2.css">
+
+	<script>
+
+	var clicks = 0;
+
+	function bright3(id) {
+		id.style.backgroundImage = "url('brightbtn.png')";
+	}
+	function minus5(id) {
+		id.style.backgroundImage = "url('5btn.png')";
+	}
+	 function crispShadow(id){
+	 	id.className += ' hover_btn';
+	 }
+	 function removeCrispShadow(id){
+	 	id.classList.remove('hover_btn');
+	 }
+	 function addNumbers(){
+	 	if (clicks >= 1){
+	 		alert('No More');
+	 	}
+	 	else {
+	 	var index;
+	 	var num = 0;
+	 	var numbers = [];
+
+	 	while (num <= 300 ){
+	 		if (num % 5 != 0){
+	 			numbers[numbers.length] = num;
+	 			console.log('loop');
+	 		}
+	 		num += 3;
+	 		}
+
+	 	var element = document.getElementById('text');
+	 	for (index = 0; index < numbers.length; index++){
+	 		console.log('second');
+	 		element.innerHTML += numbers[index] + ', ';
+	 	}	
+	 }
+	 }
+	 function newClick(){
+	 	clicks++;
+	 }
+
+	</script>
+
+</head>
+<body >
+<h1>Javascript 2 Assignment</h1>
+<div class="container">
+	<button class="btn1" onmousedown="minus5(this); addNumbers(); newClick();" onmouseover="bright3(this); crispShadow(this);" onmouseout="removeCrispShadow(this)">
+	</button>
+
+</div>
+
+<div class="demo_div">
+	<p id="text"></p>
+
+</div>
+</body>

@@ -1,0 +1,28 @@
+keep track of how many times you have evaluated the rules
+
+look at each rule one at a time
+
+evaluate the predicate list 
+evaluate each predicate as if it was a query
+
+first make sure the relations are joinable
+iterate through set of tuples
+pass in two interators
+
+joinable is a member function that 
+
+joinable takes in two iterators
+look at each tuple individually
+
+joinable(iterator for set of tuples, iterator, schema)
+
+
+
+What does the join function look like?
+
+
+Use the project function that you already wrote
+
+join ()
+make the scheme - make sure you don't add duplicates
+build from ground up instead of deleting

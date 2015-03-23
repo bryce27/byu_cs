@@ -1,0 +1,67 @@
+<DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script>
+
+	// button functions
+
+	function redTimes() {
+		var element = document.getElementById('text');
+		element.style.color = 'red';
+		element.style.fontFamily = "Times";
+	}
+	function green() {
+		document.getElementById('text').style.color = 'green';
+	}
+	function blueArial() {
+		var element = document.getElementById('text');
+		element.style.color = 'blue';
+	 	element.style.fontFamily = 'Arial';
+	 }
+	 function blackHello() {
+	 	var element = document.getElementById('text');
+		element.style.color = 'black';
+	 	element.innerHTML = 'Hello there';
+	 }
+	 function crispShadow(id){
+	 	id.className += ' hover_btn';
+	 }
+	 function removeCrispShadow(id){
+	 	id.className = 'btn';
+	 }
+	 function btn_press(id){
+	 	id.className = 'active_btn';
+	 }
+	 function btn_release(id){
+	 	id.className = 'btn';
+	 }
+
+	</script>
+
+</head>
+<body>
+<h1>Testing Javascript</h1>
+<div class="container">
+	<button class="btn" id="red_times" onmousedown="redTimes(); btn_press(this);" onmouseover="crispShadow(this)" onmouseup="btn_release(this)" onmouseout="removeCrispShadow(this)">
+		 Red Times 
+	</button>
+	<button class="btn" id="green" onmousedown="green(); btn_press(this);" onmouseup="btn_release(this)" onmouseover="crispShadow(this)" onmouseout="removeCrispShadow(this)">
+		Green
+	</button>
+	<button class="btn" id="blue_arial" onmousedown="blueArial(); btn_press(this);" onmouseup="btn_release(this)" onmouseover="crispShadow(this)" onmouseout="removeCrispShadow(this)">
+		Blue Arial
+	</button>
+	<button class="btn" "black_hello" onmousedown="blackHello(); btn_press(this);" onmouseup="btn_release(this)" onmouseover="crispShadow(this)" onmouseout="removeCrispShadow(this)">
+		Black Hello
+	</button>
+</div>
+
+
+<div class="demo_div">
+
+	<p id="text">This is some text to be displayed and changed</p>
+
+</div>
+</body>
