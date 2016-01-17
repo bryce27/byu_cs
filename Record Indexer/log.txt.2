@@ -1,0 +1,19 @@
+Nov 17, 2015 10:40:26 AM server.Server run
+INFO: Initializing Database
+Nov 17, 2015 10:40:26 AM server.Server run
+INFO: Initializing HTTP Server
+Nov 17, 2015 10:40:26 AM server.Server run
+SEVERE: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:436)
+	at sun.nio.ch.Net.bind(Net.java:428)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:214)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at sun.net.httpserver.ServerImpl.<init>(ServerImpl.java:100)
+	at sun.net.httpserver.HttpServerImpl.<init>(HttpServerImpl.java:50)
+	at sun.net.httpserver.DefaultHttpServerProvider.createHttpServer(DefaultHttpServerProvider.java:35)
+	at com.sun.net.httpserver.HttpServer.create(HttpServer.java:130)
+	at server.Server.run(Server.java:67)
+	at server.Server.main(Server.java:105)
+
