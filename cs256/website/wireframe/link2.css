@@ -1,0 +1,198 @@
+.container {
+	//background-color: red;
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+	display: block;
+	height: 800px;
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+}
+
+.left_pane {
+	float: left;
+	margin-left: 7px;
+	margin-top: 7px;
+	width: 70%;
+	height: 700px;
+}
+
+.video_pane {
+	float: left;
+	width: 100%;
+	//background-color: blue;
+	height: 430px;
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+}
+
+.video {
+	width: 100%;
+	height: 400px;
+	background-color: white;
+}
+
+.video_controls {
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 30px;
+	//background-color: black;
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+}
+
+#time_block {
+	float: left;
+	width: 10px;
+	height: 1px;
+	background-color: black;
+	border-style: solid;
+	border-color: black;
+	margin-left: 120px;
+}
+
+#play {
+	//margin: 3px, 3px, 3px, 3px;
+	width: 30px;
+	height: 23px;
+	text-align: center;
+	padding-top: 6px;
+	float: left;
+}
+
+.subtitle_button {
+	position: relative;
+	width: 120px;
+	float: right;
+	margin-right: 6px;
+	background-color: white;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	text-align: center;
+}
+
+.subtitle_button form {
+	width: 100%;
+	height: 7px;
+}
+
+.link_pane {
+	float: left;
+	margin-right: 1px;
+	margin-top: 7px;
+	width: 27%;
+	height: 600px;
+	margin-left: 8px;
+	//background-color: green;
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+}
+
+#search_bar {
+	float: left;
+	margin-left: 5px;
+	margin-top: 5px;
+	width: 100%;
+}
+
+.link_body {
+	float: left;
+	width: 95%;
+	margin-left: 5px;
+	margin-top: 25px;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	height: 500px;
+}
+
+.link_body table {
+	width: 100%;
+}
+
+.link_body td {
+	float: left;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	width: 100%;
+}
+
+.new_link {
+	float: left;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	margin-left: 5px;
+	width: 95%;
+	text-align: center;
+	height: 30px;
+	padding-top: 15px;
+}
+
+.comment_pane{
+	float: left;
+	//background-color: yellow;
+	width: 100%;
+	margin-top: 7px;
+	height: 150px;
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+}
+
+#comment_post {
+	float: left;
+	margin-left: 5px;
+	margin-top: 10px;
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+	width: 90%;
+}
+
+#comment_post input {
+	width: 100%;
+	height: 7px;
+}
+
+.comment_body {
+	float: left;
+	width: 80%;
+	margin-left: 5px;
+	margin-top: 10px;
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+}
+
+.comment_body table{
+	width: 100%;
+}
+
+.comment_body td {
+	float: left;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+}
+
+#post_button {
+	float: right;
+	width: 10%;
+}
+
+#post_button form {
+	width: 100%;
+	height: 7px;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}

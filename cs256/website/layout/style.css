@@ -1,0 +1,47 @@
+.section {
+	width: 100%;
+	background-color: black;
+}
+/*
+body {
+	margin-right: 0px;
+	padding-right: 0px;
+	margin-left: 0px;
+	padding-left: 0px
+}*/
+
+.column:first-child p{
+	margin-left: 0px;
+}
+
+.column:last-child p {
+	margin-right: 0px;
+}
+
+p {
+	margin-left: 10px;
+	margin-right: 10px;
+	background-color: red;
+}
+
+.column {
+	width: 25%;
+	display: block;
+	float: left;
+	margin-left: 0px;
+    margin-right: 0px;
+}
+
+@media (max-width: 500px) {
+  .column {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .column:first-child p{
+  	margin-left: 10px;
+  }
+  .column:last-child p {
+	margin-right: 10px;
+}
+}

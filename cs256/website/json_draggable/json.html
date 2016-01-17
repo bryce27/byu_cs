@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script>
+
+	// button functions
+
+	 function crispShadow(id){
+	 	id.className += ' hover_btn';
+	 }
+	 function removeCrispShadow(id){
+	 	id.className = 'btn';
+	 }
+	 function btn_press(id){
+	 	id.className = 'active_btn';
+	 }
+	 function btn_release(id){
+	 	id.className = 'btn';
+	 }
+
+	 var file_one = "CS920.json";
+	 var file_two = "CS970.json";
+
+	</script>
+
+</head>
+<body>
+<h1>Courses</h1>
+<div class="container">
+	<button class="btn" id="red_times" onmousedown="loadJSON(file_one); btn_press(this); setAsActive('CS920');" onmouseover="crispShadow(this)" onmouseup="btn_release(this)" onmouseout="removeCrispShadow(this)">
+		 CS920
+	</button>
+	<button class="btn" id="green" onmousedown="loadJSON(file_two); btn_press(this); setAsActive('CS970');" onmouseup="btn_release(this)" onmouseover="crispShadow(this)" onmouseout="removeCrispShadow(this)">
+		CS970
+	</button>
+</div>
+
+<h1 id="GPA">GPAs</h1>
+
+<div id="high_score"></div>
+
+<div id="id01"></div>
+
+<script>
+
+var CS920 = [];
+var CS970 = [];
+
+var CS970isActive = false;
+var CS920isActive = false;
+
+function setAsActive(array) {
+    if (array === 'CS920'){
+        CS920isActive = true;
+        CS970isActive = false;
+    }
+    else if (array === 'CS970'){
+        CS970isActive = true;
+        CS920isActive = false;
+    }
+}
+
+// returns active array
+function activeArray() {
+    if (CS920isActive) return CS920;
+    else if (CS970isActive) return CS970;
+}
+
+function loadJSON(u) {
+
+var xmlhttp = new XMLHttpRequest();
+var url = u;
+//console.log(u);
+
+	xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+    	//console.log('got here');
+        var myArr = JSON.parse(xmlhttp.responseText);
+        if (u === 'CS920.json') CS920 = myArr;
+        else if (u === 'CS970.json') CS970 = myArr;
+        myFunction(myArr);
+    }
+}
+
+xmlhttp.open("GET", u, true);
+xmlhttp.send();
+
+}
+
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    //console.log(ev.target);
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    //console.log('it should be inserted at: ',ev.target.id);
+    var dataID = ev.dataTransfer.getData("text");
+    //console.log('data is: ', data);
+    var destinationID = ev.target.id;
+    //console.log('destinationID', destinationID);
+    //console.log("target is", ev.target);
+    var currArray = activeArray();
+    var temp = currArray[dataID];
+    currArray[dataID] = currArray[destinationID];
+    currArray[destinationID] = temp;
+    myFunction(currArray);
+}
+
+function myFunction(arr) {
+	//console.log('hey');
+    var out = "<table><tr><th>Name</th><th>GPA</th></tr>";
+
+    var highest_name = "";
+    var highest_gpa = 0;
+
+    for(i = 0; i < arr.length; i++) {
+    	if (arr[i].gpa > highest_gpa){
+    		highest_name = arr[i].name;
+    		highest_gpa = arr[i].gpa;
+    	}
+        
+    	var id = name + i;
+    	//console.log('id is', id);
+
+        out += "<tr><td ondrop='drop(event)' ondragover='allowDrop(event)' draggable='true' ondragstart='drag(event)'" + " id='" + id + "' >" +
+        arr[i].name +
+        "</td><td>" +
+        arr[i].gpa +
+        "</td></tr>";
+    }
+    out += "</table>"
+    document.getElementById("id01").innerHTML = out;
+    document.getElementById("high_score").innerHTML = 'Overachiever: ' + highest_name + ' ' + highest_gpa;
+}
+
+</script>
+</body>
